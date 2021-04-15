@@ -1,8 +1,8 @@
-# Routindo System Monitor Plugin
+# Routindo System Performance Monitor Plugin
 
-![Routindo System Monitor Plugin](https://github.com/Routindo/Routindo.System/blob/main/Source/Routindo.Plugins.System/icon.png)
-- [Project Page](https://routindo.com/system-monitor/) 
-- [Documentation](https://routindo.com/docs/system-monitor/) 
+![Routindo System Performance Monitor Plugin](https://github.com/Routindo/Routindo.SysPerf/blob/main/Source/Routindo.Plugins.SysPerf/icon.png)
+- [Project Page](https://routindo.com/sysperf-monitor/) 
+- [Documentation](https://routindo.com/docs/sysperf-monitor/) 
 - Please Ask Support on the [official Forums](https://routindo.com/support/forum/?view=forum&id=8). 
 
 # This is a [Routindo](https://routindo.com) Plugin! 

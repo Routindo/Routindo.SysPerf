@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<Company>Routindo</Company>
 		<Authors>Younes Cheikh</Authors>
-		<Product>Routindo 21 - System Plugin</Product>
+		<Product>Routindo 21 - System Performance Monitor Plugin</Product>
 		<Copyright>Copyright © 2021 - All rights reserved</Copyright>
 		<VersionPrefix>1.0.0</VersionPrefix>
 		<!--<VersionSuffix>alpha</VersionSuffix>-->

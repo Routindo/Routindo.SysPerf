@@ -7,13 +7,14 @@
 	<ItemGroup>
 	  <Compile Remove="Actions\**" />
 	  <Compile Remove="ArgumentsMappers\**" />
-	  <Compile Remove="Watchers\**" />
 	  <EmbeddedResource Remove="Actions\**" />
 	  <EmbeddedResource Remove="ArgumentsMappers\**" />
-	  <EmbeddedResource Remove="Watchers\**" />
 	  <None Remove="Actions\**" />
 	  <None Remove="ArgumentsMappers\**" />
-	  <None Remove="Watchers\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="5.0.1" />
 	</ItemGroup>
 
 	

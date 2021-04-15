@@ -2,11 +2,13 @@
 
 	<PropertyGroup>
 		<TargetFramework>net5.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Routindo.Plugins.System.Components\Routindo.Plugins.System.Components.csproj" />
-		<ProjectReference Include="..\Routindo.Plugins.System.UI\Routindo.Plugins.System.UI.csproj" />
+		<ProjectReference Include="..\Routindo.Plugins.SysPerf.Components\Routindo.Plugins.SysPerf.Components.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -18,12 +20,6 @@
 			<HintPath>..\..\Libs\Shared\Routindo.Contract.UI.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Update="icon.png">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
 	</ItemGroup>
 
 </Project>
