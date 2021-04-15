@@ -5,8 +5,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Routindo.Plugins.Template.Components\Routindo.Plugins.Template.Components.csproj" />
-		<ProjectReference Include="..\Routindo.Plugins.Template.UI\Routindo.Plugins.Template.UI.csproj" />
+		<ProjectReference Include="..\Routindo.Plugins.System.Components\Routindo.Plugins.System.Components.csproj" />
+		<ProjectReference Include="..\Routindo.Plugins.System.UI\Routindo.Plugins.System.UI.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

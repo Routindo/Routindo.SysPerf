@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Actions\**" />
+	  <Compile Remove="ArgumentsMappers\**" />
+	  <Compile Remove="Watchers\**" />
+	  <EmbeddedResource Remove="Actions\**" />
+	  <EmbeddedResource Remove="ArgumentsMappers\**" />
+	  <EmbeddedResource Remove="Watchers\**" />
+	  <None Remove="Actions\**" />
+	  <None Remove="ArgumentsMappers\**" />
+	  <None Remove="Watchers\**" />
+	</ItemGroup>
+
+	
+
+	<ItemGroup>
+		<Reference Include="Routindo.Contract">
+			<HintPath>..\..\Libs\Shared\Routindo.Contract.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+</Project>
