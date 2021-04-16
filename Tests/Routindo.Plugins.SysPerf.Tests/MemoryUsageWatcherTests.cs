@@ -21,7 +21,7 @@ namespace Routindo.Plugins.SysPerf.Tests
             };
 
             var watcherResult = watcher.Watch();
-            //Assert.IsNotNull(watcherResult);
+            Assert.IsNotNull(watcherResult);
             //Assert.IsFalse(watcherResult.Result);
             //Thread.Sleep(1000);
             for (int i = 0; i < 10; i++)

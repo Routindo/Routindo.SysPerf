@@ -6,8 +6,8 @@ using Routindo.Contract.Services;
 using Routindo.Contract.Watchers;
 
 namespace Routindo.Plugins.SysPerf.Components.Watchers
-{
-    public abstract class UsageWatcher : IWatcher
+{ 
+    public abstract class PerformanceCounterWatcher : IWatcher
     {
         public string Id { get; set; }
         public ILoggingService LoggingService { get; set; }
@@ -23,7 +23,7 @@ namespace Routindo.Plugins.SysPerf.Components.Watchers
 
         private DateTime _lastNotificationTime;
 
-        protected UsageWatcher(PerformanceCounter performanceCounter)
+        protected PerformanceCounterWatcher(PerformanceCounter performanceCounter)
         {
             Counter = performanceCounter;
         }
