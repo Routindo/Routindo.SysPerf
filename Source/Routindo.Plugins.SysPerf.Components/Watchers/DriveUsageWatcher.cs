@@ -65,16 +65,10 @@ namespace Routindo.Plugins.SysPerf.Components.Watchers
 
         private double GetDriveTotalUsage(string driveName)
         {
-            var drive = DriveInfo.GetDrives().SingleOrDefault(d => d.Name == driveName);
+            var drive = DriveInfo.GetDrives().SingleOrDefault(d => d.IsReady && d.Name == driveName);
             if (drive == null)
             {
-                LoggingService.Error($"Drive not found ({driveName})");
-                return -1;
-            }
-
-            if (!drive.IsReady)
-            {
-                LoggingService.Error($"Drive ({driveName}) is not ready");
+                LoggingService.Error($"Drive ({driveName}) not found or not ready.");
                 return -1;
             }
 
