@@ -14,10 +14,14 @@ namespace Routindo.Plugins.SysPerf.Components.Watchers
 
         protected readonly PerformanceCounter Counter;
 
-        [Argument(UsageWatcherArgs.MaximumUsage, true)]
-        public int TargetMaximumUsage { get; set; } = 99;
+        [Argument(UsageWatcherArgs.MaximumUsage, true)] public int TargetMaximumUsage { get; set; } = 99;
+
+        [Argument(UsageWatcherArgs.NotificationTimeIntervalSeconds, true)] public int NotificationTimeIntervalSeconds { get; set; } = 0;
 
         private float _lastUsage = 0;
+        private float _lastNotificationUsage = 0;
+
+        private DateTime _lastNotificationTime;
 
         protected UsageWatcher(PerformanceCounter performanceCounter)
         {
@@ -30,12 +34,17 @@ namespace Routindo.Plugins.SysPerf.Components.Watchers
             {
                 var usage = Counter.NextValue();
 
-                if (usage > TargetMaximumUsage)
+                // LoggingService.Debug($"Last Usage: {_lastUsage}, Current Usage: {usage}, Target {TargetMaximumUsage}");
+                if (usage > TargetMaximumUsage && CanNotify())
                 {
                     // Notify only for the first occurrence when exceeding the target maximum
-                    if (_lastUsage < TargetMaximumUsage)
+                    if (_lastUsage < TargetMaximumUsage 
+                        // Current usage is greater than previous notification usage
+                        || _lastNotificationUsage < usage)
                     {
                         _lastUsage = usage;
+                        _lastNotificationUsage = usage;
+                        _lastNotificationTime = DateTime.Now;
                         return WatcherResult.Succeed(ArgumentCollection.New()
                             .WithArgument(UsageWatcherResultArgs.Usage, usage.ToString("F"))
                         );
@@ -51,6 +60,13 @@ namespace Routindo.Plugins.SysPerf.Components.Watchers
                 LoggingService.Error(exception);
                 return WatcherResult.NotFound;
             }
+        }
+
+        private bool CanNotify()
+        {
+            var totalSecondsSinceLastNotification = DateTime.Now.Subtract(_lastNotificationTime).TotalSeconds;
+            // LoggingService.Debug($"Total Seconds since last notification: {totalSecondsSinceLastNotification}");
+            return totalSecondsSinceLastNotification >= NotificationTimeIntervalSeconds;
         }
     }
 }
