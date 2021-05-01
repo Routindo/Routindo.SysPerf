@@ -3,8 +3,8 @@ using Routindo.Contract.Attributes;
 
 namespace Routindo.Plugins.SysPerf.Components.Watchers
 {
-    [PluginItemInfo(ComponentUniqueId, "RAM Usage Watcher",
-         "Watch Memory Usage and notify when usage reaches the target maximum"),
+    [PluginItemInfo(ComponentUniqueId, nameof(MemoryUsageWatcher),
+         "Watch Memory Usage and notify when usage reaches the target maximum", Category = "System Resources", FriendlyName = "Monitor RAM Usage"),
      ResultArgumentsClass(typeof(UsageWatcherResultArgs))]
     public class MemoryUsageWatcher : PerformanceCounterWatcher
     {

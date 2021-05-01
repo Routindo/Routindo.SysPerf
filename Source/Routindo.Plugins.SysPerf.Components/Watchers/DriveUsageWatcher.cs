@@ -8,8 +8,8 @@ using Routindo.Contract.Watchers;
 
 namespace Routindo.Plugins.SysPerf.Components.Watchers
 {
-    [PluginItemInfo(ComponentUniqueId, "Drive Usage Watcher",
-         "Watch Drive Usage and notify when usage reaches the target maximum"),
+    [PluginItemInfo(ComponentUniqueId, nameof(DriveUsageWatcher),
+         "Watch Drive Usage and notify when usage reaches the target maximum", Category = "System Resources", FriendlyName = "Monitor Drive Usage"),
      ResultArgumentsClass(typeof(UsageWatcherResultArgs))]
     public class DriveUsageWatcher: IWatcher
     {

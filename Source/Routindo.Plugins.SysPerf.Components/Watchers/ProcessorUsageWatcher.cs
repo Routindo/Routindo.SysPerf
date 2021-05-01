@@ -3,8 +3,8 @@ using Routindo.Contract.Attributes;
 
 namespace Routindo.Plugins.SysPerf.Components.Watchers
 {
-    [PluginItemInfo(ComponentUniqueId, "CPU Usage Watcher",
-         "Watch Processor Usage and notify when usage reaches the target maximum"),
+    [PluginItemInfo(ComponentUniqueId, nameof(ProcessorUsageWatcher),
+         "Watch Processor Usage and notify when usage reaches the target maximum", Category = "System Resources", FriendlyName = "Monitor CPU Usage"),
      ResultArgumentsClass(typeof(UsageWatcherResultArgs))]
     public class ProcessorUsageWatcher : PerformanceCounterWatcher
     {
